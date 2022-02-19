@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://dashboard.heroku.com/apps/morning-meadow-02168'
+  apiBaseUrl: 'https://morning-meadow-02168.herokuapp.com'
 };
 
 /*
