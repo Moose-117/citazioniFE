@@ -11,8 +11,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit{
+  user: User | undefined;
 
-  public user: User;
+ 
 
   constructor(private userService: UserService){}
 
@@ -24,8 +25,6 @@ export class AppComponent implements OnInit{
     this.userService.getUser().subscribe(
     (response: User) => {
         this.user = response;
-        console.log("ciao");
-
       }
     );
   }
