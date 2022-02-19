@@ -24,9 +24,7 @@ export class AppComponent implements OnInit{
     this.userService.getUser().subscribe(
     (response: User) => {
         this.user = response;
-      let str;
-      str = JSON.stringify(response, null, 4);
-      console.log(str);
+        console.log("ciao");
 
       }
     );
