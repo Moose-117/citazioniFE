@@ -15,7 +15,7 @@ export class UserService {
 
   public getUser(): Observable<User> {
 
-    console.log(this.apiServerUrl/users/getUserById/1220024417);
+    console.log(this.apiServerUrl + "/users/getUserById/1220024417");
     return this.http.get<User>(`${this.apiServerUrl}/users/getUserById/1220024417`);
 
   } 
