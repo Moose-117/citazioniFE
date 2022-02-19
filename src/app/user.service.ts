@@ -15,15 +15,14 @@ export class UserService {
 
   public getUser(): Observable<User> {
 
-    console.log(this.apiServerUrl + "/users/getUserById/1220024417");
-    return this.http.get<User>(`${this.apiServerUrl}/users/getUserById/1220024417`);
+    return this.http.get<User>(`${this.apiServerUrl}/users/getUserById/281983922`);
 
   } 
 
-  public postUser(user: User): Observable<User> {
+  // public postUser(user: User): Observable<User> {
 
-    return this.http.post<User>(`${this.apiServerUrl}/users/postUtente`, user);
+  //   return this.http.post<User>(`${this.apiServerUrl}/users/postUtente`, user);
 
-  } 
+  // } 
 
 }
