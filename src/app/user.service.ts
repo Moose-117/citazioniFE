@@ -8,7 +8,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-  private apiServerUrl = `http://localhost:8080`;
+  private apiServerUrl = `https://morning-meadow-02168.herokuapp.com`;
 
   constructor(private http: HttpClient ) { }
 
