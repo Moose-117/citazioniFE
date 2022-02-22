@@ -7,7 +7,7 @@ import { Utente } from './user';
 @Injectable({
   providedIn: 'root'
 })
-export class UtenteService {
+export class UserService {
   private apiServerUrl = `https://morning-meadow-02168.herokuapp.com`;
 
   constructor(private http: HttpClient ) { }

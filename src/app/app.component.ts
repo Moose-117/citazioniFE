@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Utente } from './user';
-import { UtenteService } from './user.service';
+import { UserService, UtenteService } from './user.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { UtenteService } from './user.service';
 })
 export class AppComponent implements OnInit{
   
-  constructor(private utenteService: UtenteService){}
+  constructor(private utenteService: UserService){}
  
    utente: Utente={
      nome: "a",
