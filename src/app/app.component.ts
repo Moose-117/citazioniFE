@@ -13,10 +13,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent implements OnInit{
   
   constructor(private userService: UserService){}
-  ngOnInit(){
-    this.getUserComponent();
-  }
-
+ 
    user: User={
      nome: "a",
      cognome: "b",
@@ -24,6 +21,9 @@ export class AppComponent implements OnInit{
      idUtente: 0
    };
 
+   ngOnInit(){
+    this.getUserComponent();
+  }
 
 
   public getUserComponent(): void {
