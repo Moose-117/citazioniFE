@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Utente } from './user';
-import { UserService, UtenteService } from './user.service';
+import { UserService} from './user.service';
 
 
 @Component({
