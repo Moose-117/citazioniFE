@@ -14,10 +14,10 @@ export class UserService {
 
 
   public getUser(): Observable<User> {
-  
+    alert("Hello " + this.name);
     return this.http.get<User>(`${this.apiServerUrl}/users/getUserById/281983922`);
 
-  } 
+  }
 
   // public postUser(user: User): Observable<User> {
 

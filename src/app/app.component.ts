@@ -11,14 +11,20 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit{
-
-  public user: User;
-
+  
   constructor(private userService: UserService){}
-
   ngOnInit(){
     this.getUserComponent();
   }
+
+   user: User={
+     nome: "a",
+     cognome: "b",
+     email: "c",
+     idUtente: 0
+   };
+
+
 
   public getUserComponent(): void {
     this.userService.getUser().subscribe(
