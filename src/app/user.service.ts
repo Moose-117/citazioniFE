@@ -2,27 +2,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { User } from './user';
+import { Utente } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UtenteService {
   private apiServerUrl = `https://morning-meadow-02168.herokuapp.com`;
 
   constructor(private http: HttpClient ) { }
 
 
-  public getUser(): Observable<User> {
-    alert("Hello ");
-    return this.http.get<User>(`${this.apiServerUrl}/users/getUserById/281983922`);
-
+  public getUtente(): Observable<Utente> {
+    alert(this.http.get<Utente>(`${this.apiServerUrl}/users/getUserById/281983922`));
+    return this.http.get<Utente>(`${this.apiServerUrl}/users/getUserById/281983922`);
   }
-
-  // public postUser(user: User): Observable<User> {
-
-  //   return this.http.post<User>(`${this.apiServerUrl}/users/postUtente`, user);
-
-  // } 
-
 }

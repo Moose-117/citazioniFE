@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { User } from './user';
-import { UserService } from './user.service';
 import { NgForm } from '@angular/forms';
+import { Utente } from './user';
+import { UtenteService } from './user.service';
 
 
 @Component({
@@ -12,9 +12,9 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent implements OnInit{
   
-  constructor(private userService: UserService){}
+  constructor(private utenteService: UtenteService){}
  
-   user: User={
+   utente: Utente={
      nome: "a",
      cognome: "b",
      email: "c",
@@ -22,16 +22,15 @@ export class AppComponent implements OnInit{
    };
 
    ngOnInit(){
-    this.getUserComponent();
+    this.getUtenteComponent();
   }
 
 
-  public getUserComponent(): void {
-    this.userService.getUser().subscribe(
-    (response: User) => {
-        this.user = response;
-        alert(this.user);
-
+  public getUtenteComponent(): void {
+    this.utenteService.getUtente().subscribe(
+    (response: Utente) => {
+        this.utente = response;
+        alert(this.utente);
       }
     );
   }
