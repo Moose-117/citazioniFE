@@ -29,7 +29,6 @@ export class AppComponent implements OnInit{
   public getUtenteComponent(): void {
     this.utenteService.getUtente().subscribe(
     (response: Utente) => {
-      alert(this.utente);
         this.utente = response;
       }
     );
