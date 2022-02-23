@@ -13,7 +13,6 @@ export class UserService {
   constructor(private http: HttpClient ) { }
 
   public getUtente(): Observable<Utente> {
-    alert(JSON.stringify(this.http.get<Utente>(`${this.apiServerUrl}/users/getUserById/281983922`)));
     return this.http.get<Utente>(`${this.apiServerUrl}/users/getUserById/281983922`);
   }
 }
