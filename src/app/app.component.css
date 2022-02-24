@@ -1,13 +1,43 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css");
 body {
-    background-color: lightblue;
+    background-color: rgb(255, 255, 255);
   }
-  
+
+
   h1 {
-    color: white;
+    color: rgb(36, 0, 102);
     text-align: center;
   }
 
   .center {
     text-align: center;
-    border: 10px solid rgb(0, 66, 128);
+    background-color: #484c7a;
+    border: 10px solid;
   }
+
+
+
+/* NAVBAR */
+  nav {
+    background-color: #484c7a;
+    
+  }
+  navbar-brand {
+    background-color: rgb(255, 255, 255);
+  }
+
+  /* FORM */
+
+  form.absolute {
+    position: absolute;
+    bottom: 100px;
+    width: 50%;
+    border: 3px solid #8AC007;
+  }
+
+   /* LABEL */
+
+   label {
+    color: rgb(255, 255, 255);
+
+   }

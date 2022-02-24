@@ -18,13 +18,17 @@ export class AppComponent implements OnInit{
      nome: "a",
      cognome: "b",
      email: "c",
-     idUtente: 0
    };
 
    ngOnInit(){
     this.getUtenteComponent();
   }
 
+  getForm(loginForm:any){
+    this.utente.nome = loginForm.nome;
+    this.utente.cognome = loginForm.cognome;
+    this.utente.email = loginForm.email;
+   }
 
   public getUtenteComponent(): void {
     this.utenteService.getUtente().subscribe(
