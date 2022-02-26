@@ -1,8 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Utente } from './user';
 import { UserService} from './user.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostUtente, RespUtente } from './postUserObj';
+
 
 
 @Component({
@@ -11,47 +14,68 @@ import { UserService} from './user.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit{
-  
-  constructor(private utenteService: UserService){}
- 
-   utente: Utente={
-     nome: "a",
-     cognome: "b",
-     email: "c",
-   };
+    form: FormGroup;
+    
+  utente: Utente={
+    nome: "a",
+    cognome: "b",
+    email: "c",
+  };
+
+  posData: RespUtente = {
+    nome: "a",
+    cognome: "b",
+    email: "c",
+    id: 0
+}
+resultData: PostUtente = {
+  nome: "a",
+  cognome: "b",
+  email: "c",
+}
+
+
+  constructor(private utenteService: UserService, public fb: FormBuilder){
+
+    this.form = fb.group({
+      'nome':[],
+      'cognome':[],
+      'email':[]
+    });
+  }
 
    ngOnInit(){
+   
     this.getUtenteComponent();
   }
 
-  getForm(loginForm:any){
-    this.utente.nome = loginForm.nome;
-    this.utente.cognome = loginForm.cognome;
-    this.utente.email = loginForm.email;
-   }
+
+  send(): void{
+    this.utente.nome = this.form.controls['nome'].value;
+    this.utente.cognome = this.form.controls['cognome'].value;
+    this.utente.email = this.form.controls['email'].value;
+    this.utenteService.postUtente(this.resultData).subscribe((RespUtente)=>{
+    
+      this.utente =this.resultData;
+      });
+    }
+
+  
+
 
   public getUtenteComponent(): void {
+    
     this.utenteService.getUtente().subscribe(
     (response: Utente) => {
-        this.utente = response;
+        this.utente.nome = response.nome;
+        this.utente.cognome = response.cognome;
+        this.utente.email = response.email;
+
       }
     );
   }
-
-
-  /* public onAddEmloyee(addForm: NgForm): void {
-    document.getElementById('add-employee-form').click();
-    this.userService.postUser(addForm.value).subscribe(
-      (response: User) => {
-        console.log(response);
-        this.getUserComponent();
-        addForm.reset();
-      },
-    );
-  }
-*/
-
-
 }
+
+
 
 

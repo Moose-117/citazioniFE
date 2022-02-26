@@ -50,14 +50,13 @@
    
 
       <div style="text-align:center">
-         <form #loginForm="ngForm" (ngSubmit)="getForm(loginForm.value)">
-            <input  required #nome="ngModel" name="nome" placeholder="Enter First Name" ngModel />
-            <br /> 
-            <input required #cognome="ngModel" placeholder="Enter Last Name" ngModel />
-            <input type="email" required #email="ngModel" pattern="[a-zA-Z]+$" name="email" placeholder="Enter email" ngModel />
-            <span *ngIf="nome.invalid && nome.touched" style="color: red;" >Please enter a Valid input</span><br />
-
-            <br />
+         <form (ngSubmit)="send()" [formGroup]="form">
+            <input  required name="nome" placeholder="Enter First Name" formControlName = "nome" />
+            <br/> 
+            <input required placeholder="Enter Last Name" formControlName = "cognome" />
+            <br/> 
+            <input type="email" required  pattern="[a-zA-Z]+$" name="email" placeholder="Enter email" formControlName = "email" />
+            <br/>
             <button>Login</button>
           </form>
       </div>   
