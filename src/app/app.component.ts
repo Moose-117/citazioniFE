@@ -54,7 +54,7 @@ resultData: PostUtente = {
     this.utente.nome = this.form.controls['nome'].value;
     this.utente.cognome = this.form.controls['cognome'].value;
     this.utente.email = this.form.controls['email'].value;
-    this.utenteService.postUtente(this.resultData).subscribe((RespUtente)=>{
+    this.utenteService.postUtente(this.utente).subscribe((RespUtente)=>{
     
       this.utente =this.resultData;
       });
