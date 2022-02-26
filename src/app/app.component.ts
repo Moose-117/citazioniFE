@@ -46,7 +46,7 @@ resultData: PostUtente = {
 
    ngOnInit(){
    
-    this.getUtenteComponent();
+    //this.getUtenteComponent();
   }
 
 
@@ -56,7 +56,7 @@ resultData: PostUtente = {
     this.utente.email = this.form.controls['email'].value;
     this.utenteService.postUtente(this.utente).subscribe((RespUtente)=>{
     
-      this.utente =this.resultData;
+      //this.utente =this.resultData;
       });
     }
 
