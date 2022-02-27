@@ -1,0 +1,28 @@
+
+<h1>
+   Benvenuta {{utente.nome}}, questo sarà il tuo mondo delle Citazioni
+</h1>
+   
+
+    <div style="text-align:center">
+      <form (ngSubmit)="send()" [formGroup]="form">
+         <input  required name="nome" placeholder="Enter First Name" formControlName = "nome" />
+         <br/> 
+         <input required placeholder="Enter Last Name" formControlName = "cognome" />
+         <br/> 
+         <input type="email" required  pattern="[a-zA-Z]+$" name="email" placeholder="Enter email" formControlName = "email" />
+         <br/>
+         <button>Login</button>
+       </form>
+   </div>   
+
+
+  
+<!-- <table>
+    <p *ngFor="let item of utenti">
+      {{item.nome}}
+      {{item.cognome}}
+      {{item.email}}
+    </p>
+</table> -->
+   

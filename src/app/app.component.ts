@@ -1,8 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Utente } from './user';
 import { UserService} from './user.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostUtente, RespUtente } from './postUserObj';
+
 
 
 @Component({
@@ -11,43 +14,43 @@ import { UserService} from './user.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit{
-  
-  constructor(private utenteService: UserService){}
- 
-   utente: Utente={
-     nome: "a",
-     cognome: "b",
-     email: "c",
-     idUtente: 0
-   };
 
-   ngOnInit(){
-    this.getUtenteComponent();
+  // utenti: Utente[] =[];
+    
+  // utente: Utente={
+  //   nome: "a",
+  //   cognome: "b",
+  //   email: "c",
+  // };
+
+
+  constructor(private utenteService: UserService, public fb: FormBuilder){
+  }
+
+  ngOnInit(){
+   
+    //this.getUtenteComponent();
+    //this.getAllUtentiComponent();
   }
 
 
-  public getUtenteComponent(): void {
-    this.utenteService.getUtente().subscribe(
-    (response: Utente) => {
-        this.utente = response;
-      }
-    );
-  }
 
-
-  /* public onAddEmloyee(addForm: NgForm): void {
-    document.getElementById('add-employee-form').click();
-    this.userService.postUser(addForm.value).subscribe(
-      (response: User) => {
-        console.log(response);
-        this.getUserComponent();
-        addForm.reset();
-      },
-    );
-  }
-*/
-
-
+  // public getUtenteComponent(): void {
+    
+  //   this.utenteService.getUtente().subscribe(
+  //   (response: Utente) => {
+  //       this.utente.nome = response.nome;
+  //       this.utente.cognome = response.cognome;
+  //       this.utente.email = response.email;
+  //     }
+  //   );
+  // }
+  // public getAllUtentiComponent(): void {
+    
+  //   this.utenteService.getAllUtente().subscribe(
+  //     (response: Utente[]) => {
+  //       this.utenti = response;
+  //     }
+  //   )
+  // }
 }
-
-

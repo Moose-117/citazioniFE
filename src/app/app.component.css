@@ -1,0 +1,53 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css");
+
+
+  h1 {
+    color: rgb(36, 0, 102);
+    text-align: center;
+  }
+
+  .center {
+    text-align: center;
+    background-color: #484c7a;
+    border: 10px solid;
+  }
+
+
+
+
+
+  /* FORM */
+
+  form.absolute {
+    position: absolute;
+    bottom: 100px;
+    width: 50%;
+    border: 3px solid #8AC007;
+  }
+
+   /* LABEL */
+
+   label {
+    color: rgb(255, 255, 255);
+
+   }
+
+
+
+   /*#############  BACKGROUND IMAGE #################*/
+   body, html {
+    height: 100%;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("https://hovn35hhp33ylxhj3ezdyk6g-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/CCA-Website-Resources-AS348291651-Web.jpeg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
