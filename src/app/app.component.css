@@ -1,7 +1,4 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css");
-body {
-    background-color: rgb(255, 255, 255);
-  }
 
 
   h1 {
@@ -34,3 +31,23 @@ body {
     color: rgb(255, 255, 255);
 
    }
+
+
+
+   /*#############  BACKGROUND IMAGE #################*/
+   body, html {
+    height: 100%;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("https://hovn35hhp33ylxhj3ezdyk6g-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/CCA-Website-Resources-AS348291651-Web.jpeg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

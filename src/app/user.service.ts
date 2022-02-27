@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Utente } from './user';
 import { PostUtente} from './postUserObj';
-import { userInfo } from 'os';
 
 
 @Injectable({
