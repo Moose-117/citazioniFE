@@ -14,68 +14,43 @@ import { PostUtente, RespUtente } from './postUserObj';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit{
-    form: FormGroup;
-    
-  utente: Utente={
-    nome: "a",
-    cognome: "b",
-    email: "c",
-  };
 
-  posData: RespUtente = {
-    nome: "a",
-    cognome: "b",
-    email: "c",
-    id: 0
-}
-resultData: PostUtente = {
-  nome: "a",
-  cognome: "b",
-  email: "c",
-}
+  // utenti: Utente[] =[];
+    
+  // utente: Utente={
+  //   nome: "a",
+  //   cognome: "b",
+  //   email: "c",
+  // };
 
 
   constructor(private utenteService: UserService, public fb: FormBuilder){
-
-    this.form = fb.group({
-      'nome':[],
-      'cognome':[],
-      'email':[]
-    });
   }
 
-   ngOnInit(){
+  ngOnInit(){
    
     //this.getUtenteComponent();
+    //this.getAllUtentiComponent();
   }
 
 
-  send(): void{
-    this.utente.nome = this.form.controls['nome'].value;
-    this.utente.cognome = this.form.controls['cognome'].value;
-    this.utente.email = this.form.controls['email'].value;
-    this.utenteService.postUtente(this.utente).subscribe((RespUtente)=>{
+
+  // public getUtenteComponent(): void {
     
-      //this.utente =this.resultData;
-      });
-    }
-
-  
-
-
-  public getUtenteComponent(): void {
+  //   this.utenteService.getUtente().subscribe(
+  //   (response: Utente) => {
+  //       this.utente.nome = response.nome;
+  //       this.utente.cognome = response.cognome;
+  //       this.utente.email = response.email;
+  //     }
+  //   );
+  // }
+  // public getAllUtentiComponent(): void {
     
-    this.utenteService.getUtente().subscribe(
-    (response: Utente) => {
-        this.utente.nome = response.nome;
-        this.utente.cognome = response.cognome;
-        this.utente.email = response.email;
-
-      }
-    );
-  }
+  //   this.utenteService.getAllUtente().subscribe(
+  //     (response: Utente[]) => {
+  //       this.utenti = response;
+  //     }
+  //   )
+  // }
 }
-
-
-
-

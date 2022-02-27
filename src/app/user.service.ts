@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Utente } from './user';
 import { PostUtente} from './postUserObj';
+import { userInfo } from 'os';
 
 
 @Injectable({
@@ -26,6 +27,14 @@ export class UserService {
 
   public getUtente(): Observable<Utente> {
     return this.http.get<Utente>(`${this.apiServerUrl}/users/getUserById/708416356`);
+  }
+
+
+
+  public getAllUtente(): Observable<Utente[]> {
+    
+    return this.http.get<Utente[]>(`${this.apiServerUrl}/users/getAllUsers`);
+   
   }
 
 
