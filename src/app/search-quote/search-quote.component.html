@@ -1,28 +1,36 @@
+<div class="bg container-fluid">
 
-<h1>
-   Benvenuta {{utente.nome}}, questo sarà il tuo mondo delle Citazioni
-</h1>
-   
+  <h1>
+    Benvenuto {{utente.nome}}, questo sarà il tuo mondo delle Citazioni
+  </h1>
 
-    <div style="text-align:center">
-      <form (ngSubmit)="send()" [formGroup]="form">
-         <input  required name="nome" placeholder="Enter First Name" formControlName = "nome" />
-         <br/> 
-         <input required placeholder="Enter Last Name" formControlName = "cognome" />
-         <br/> 
-         <input type="email" required  pattern="[a-zA-Z]+$" name="email" placeholder="Enter email" formControlName = "email" />
-         <br/>
-         <button>Login</button>
-       </form>
-   </div>   
+  <div style="text-align:center;">
+    <form (ngSubmit)="send()" [formGroup]="form">
+      <input required name="nome" placeholder="Enter First Name" formControlName="nome" />
+      <br />
+      <input required placeholder="Enter Last Name" formControlName="cognome" />
+      <br />
+      <input type="email" required pattern="[a-zA-Z]+$" name="email" placeholder="Enter email"
+        formControlName="email" />
+      <br />
+      <button style="margin-top:1%;">Login</button>
+    </form>
+  </div>
+</div>
 
 
-  
-<!-- <table>
-    <p *ngFor="let item of utenti">
-      {{item.nome}}
-      {{item.cognome}}
-      {{item.email}}
-    </p>
-</table> -->
-   
+<div>
+  <h2 style="color: black; text-align: center; padding-top: 1%;" >
+    Quale frase stai cercando?
+  </h2>
+
+  <div style="text-align:center; padding-top: 1%;">
+    <form (ngSubmit)="send()" [formGroup]="form">
+      <input required name="Inserisci qui la tua frase. . ." placeholder="Inserisci qui la tua frase. . ." formControlName="quote" style="width: 60%; font-family: cursive; background-color: aqua; opacity: 50%; border: 2px solid rgb(14, 82, 108); border-radius: 2px;"/>
+      <br />
+      <button style="margin-top: 2%; background-color: rgba(134, 192, 73, 0.433); width: 8%; border-radius: 4px; font-family: 'Times New Roman', Times, serif; font-weight: normal;">Cerca</button>
+    </form>
+  </div>
+
+</div>
+ 
