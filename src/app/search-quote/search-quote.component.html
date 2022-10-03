@@ -1,26 +1,24 @@
-<div class="bg container-fluid">
-  <h2 style="color: black; text-align: center; padding-top: 1%;">
-    Quale frase stai cercando?
-  </h2>
-
+<div class="container-fluid">
   <div style="text-align:center; padding-top: 1%;">
-    <form (ngSubmit)="findCitazione()" [formGroup]="form">
-      <input required name="Inserisci qui la tua frase. . ." placeholder="Inserisci qui la tua frase. . ."
-        formControlName="quote"
-        style="width: 60%; font-family: cursive; background-color: aqua; opacity: 50%; border: 2px solid rgb(14, 82, 108); border-radius: 2px;" />
+    <form class="input" (ngSubmit)="findCitazione()" [formGroup]="form">
+      <input required name="Inserisci qui la tua frase. . ." formControlName="quote"
+        style="width: 60%; border: 0px; font-family: cursive; background: none; opacity: 50%;" />
       <br />
       <button
-        style="margin-top: 2%; background-color: rgba(134, 192, 73, 0.433); width: 8%; border-radius: 4px; font-family: 'Times New Roman', Times, serif; font-weight: normal;">Cerca
+        style="margin-top: 10%; background-color: rgba(134, 192, 73, 0.433); width: 8%; border-radius: 4px; font-family: 'Times New Roman', Times, serif; font-weight: normal;">Cerca
       </button>
     </form>
   </div>
+</div>
 
-  <h1 style="text-align: center;">
-    questo è quello che ho trovato per te!
-    <table>
-      <tr *ngFor="let citazione of citazioni">
-            <td style="color: blueviolet;">{{citazione.content}}</td>
-      </tr>
-    </table>
-  </h1>
+<div class="bg container-fluid">
+  <div style="text-align:center; padding-top: 1%;">
+    <h1 style="text-align: center;">
+      <table style="margin-bottom: 18%; font-size: large; font-family: cursive;">
+        <tr *ngFor="let citazione of citazioni">
+          <td style="color: hsl(0, 0%, 0%); opacity: 1;">{{citazione.content}}</td>
+        </tr>
+      </table>
+    </h1>
+  </div>
 </div>

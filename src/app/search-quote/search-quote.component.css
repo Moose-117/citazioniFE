@@ -1,51 +1,57 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css");
 
+h1 {
+  color: rgb(36, 0, 102);
+  text-align: center;
+}
 
-  h1 {
-    color: rgb(36, 0, 102);
-    text-align: center;
-  }
+.center {
+  text-align: center;
+  background-color: #484c7a;
+  border: 10px solid;
+}
 
-  .center {
-    text-align: center;
-    background-color: #484c7a;
-    border: 10px solid;
-  }
+/* FORM */
 
+form.absolute {
+  position: absolute;
+  bottom: 100px;
+  width: 50%;
+  border: 3px solid #8AC007;
+}
 
+/* LABEL */
 
+label {
+  color: rgb(255, 255, 255);
+}
 
+/*#############  BACKGROUND IMAGE #################*/
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
 
-  /* FORM */
+.bg {
+  /* The image used */
+  background-image: url("https://hovn35hhp33ylxhj3ezdyk6g-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/CCA-Website-Resources-AS348291651-Web.jpeg");
 
-  form.absolute {
-    position: absolute;
-    bottom: 100px;
-    width: 50%;
-    border: 3px solid #8AC007;
-  }
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  opacity: 0.5;
+  box-shadow: 0 0 10px 10px white inset;
+}
 
-   /* LABEL */
+.input {
+  /* The image used */
+  background-image: url("https://as2.ftcdn.net/v2/jpg/01/86/03/73/500_F_186037354_yC7wUeT2RPOgXaFTPYe07C6ZirbpkC1Z.jpg");
 
-   label {
-    color: rgb(255, 255, 255);
-
-   }
-
-
-
-   /*#############  BACKGROUND IMAGE #################*/
-   body, html {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .bg {
-    /* The image used */
-    background-image: url("https://hovn35hhp33ylxhj3ezdyk6g-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/CCA-Website-Resources-AS348291651-Web.jpeg");
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  box-shadow: 0 0 3px 3px rgb(255, 255, 255) inset;
+}

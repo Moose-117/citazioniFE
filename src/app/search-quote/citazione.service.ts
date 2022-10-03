@@ -27,7 +27,8 @@ export class CitazioneService {
 
   public getAllCitazioni(stringaCercata: string): Observable<CitazioneCercata[]> {
     
-    return this.http.get<CitazioneCercata[]>(`${this.apiServerUrl}/users/getCitazione/${stringaCercata}`);
-   
+    //return this.http.get<CitazioneCercata[]>(`${this.apiServerUrl}/users/getCitazione/${stringaCercata}`);
+    return this.http.get<CitazioneCercata[]>(`${this.apiServerUrl}/users/getAllCitazioni`);
+
   }
 }
