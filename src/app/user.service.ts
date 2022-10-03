@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { Utente } from './user';
 import { PostUtente} from './postUserObj';
-
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +25,6 @@ export class UserService {
   public getUtente(): Observable<Utente> {
     return this.http.get<Utente>(`${this.apiServerUrl}/users/getUserById/708416356`);
   }
-
-
 
   public getAllUtente(): Observable<Utente[]> {
     

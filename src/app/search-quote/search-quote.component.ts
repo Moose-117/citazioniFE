@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Utente } from '../user';
-import { UserService } from '../user.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { PostUtente, RespUtente } from '../postUserObj';
+import { CitazioneService } from './citazione.service';
+import { CitazioneCercata } from './CitazioneCercata';
 
 @Component({
   selector: 'app-search-quote',
@@ -10,49 +9,31 @@ import { PostUtente, RespUtente } from '../postUserObj';
   styleUrls: ['./search-quote.component.css']
 })
 export class SearchQuoteComponent implements OnInit {
+  citazioni: CitazioneCercata[] = [];
   form: FormGroup;
-  utenti: Utente[] =[];
-  headers = ["Nome", "Cognome", "Email"];
-  utente: Utente={
-    nome: "c",
-    cognome: "b",
-    email: "c",
-  };
-  posData: RespUtente = {
-    nome: "a",
-    cognome: "b",
-    email: "c",
-    id: 0
-}
-resultData: PostUtente = {
-  nome: "a",
-  cognome: "b",
-  email: "c",
-}
 
-
-  constructor(private utenteService: UserService, public fb: FormBuilder){
+  constructor(private citazioneService: CitazioneService, public fb: FormBuilder) {
     this.form = fb.group({
-      'nome':[],
-      'cognome':[],
-      'email':[]
+      'quote': [],
     });
-}
+  }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    let citazioni: CitazioneCercata[] = [];
+    let citazione: CitazioneCercata = {
+      idCitazione: "",
+      idArtista: "",
+      idLibro: "",
+      content: ""
+    };
+    }
+  
+  findCitazione(): void{
+    let stringaRicercata = this.form.controls['quote'].value;
+    this.citazioneService.getAllCitazioni(stringaRicercata).subscribe(
+      response => {this.citazioni = response;
+        alert(this.citazioni.values)}
+    );
   }
 
-  send(): void{
-    this.utente.nome = this.form.controls['nome'].value;
-    this.utente.cognome = this.form.controls['cognome'].value;
-    this.utente.email = this.form.controls['email'].value;
-    this.utenteService.postUtente(this.utente).subscribe((RespUtente)=>{
-      if(this.utente)
-        alert("utente inserito correttamente" + this.utente.nome + this.utente.cognome + this.utente.email);
-      });
-    }
+
 }
-
-
-
-
